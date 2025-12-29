@@ -2,9 +2,9 @@
 
 @theme {
     --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    --color-primary: #f67280;
-    --color-primary-content: #101828;
-    --color-complementary: #355c7d;
+    --color-primary: #f59e0b;
+    --color-primary-content: #111827;
+    --color-complementary: #111827;
     --background-image-noise: linear-gradient(
             to bottom,
             color-mix(in oklab, var(--color-gray-950) 0%, transparent),
@@ -74,5 +74,21 @@
         --btn-font-size: 1.125rem;
         --btn-px: 1.5rem;
         --btn-py: 1.125rem;
+    }
+
+    .btn-primary {
+        @apply bg-amber-500 text-gray-900;
+
+        &:hover {
+            @apply bg-amber-400;
+        }
+    }
+
+    .btn-outline {
+        @apply bg-transparent text-white border-2 border-white/30;
+
+        &:hover {
+            @apply bg-white/10 border-white/50;
+        }
     }
 }
