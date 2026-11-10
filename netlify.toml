@@ -1,0 +1,36 @@
+# Netlify configuration for uberpropertyinvestments.com.
+# Docs: docs/deployment.md
+#
+# IMPORTANT — deploy branch: the live site currently deploys from branch
+# `agent-new-template-ba5e`, NOT from main. This file alone does not change
+# that. After this rewrite is merged to main, switch the production branch
+# to main in the Netlify dashboard (Site configuration -> Build & deploy ->
+# Branches) or merge main into `agent-new-template-ba5e`. See
+# docs/deployment.md.
+#
+# The lead form on the homepage is a Netlify Form (see the form in
+# src/pages/index.astro). Two dashboard settings are required for leads to
+# reach the owner — they CANNOT be set in this file:
+#   1. Site configuration -> Forms -> turn OFF "Ignore HTML forms"
+#      (the site currently has ignore_html_forms=true, which would make
+#      Netlify ignore the form entirely).
+#   2. Site configuration -> Forms -> Form notifications -> email to
+#      gage.e.kirton@gmail.com (the owner's personal Gmail; the old
+#      business inbox offers@uberpropertyinvestments.com has lapsed).
+# Full checklist: docs/lead-capture.md.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Basic security headers for every page. The form submits to Netlify Forms on
+# the same origin, so no extra connect-src allowances are needed.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

@@ -1,0 +1,45 @@
+<!-- ==========================================================================
+  Thank-you page — src/pages/thank-you.astro
+  ==========================================================================
+  This page is the fallback destination for the lead form (see the form's
+  action="/thank-you" in src/pages/index.astro). Two cases land here:
+    1. JavaScript is disabled, so the form submits as a plain POST and
+       Netlify serves this page after recording the lead.
+    2. The JavaScript submit fails and the code falls back to a plain POST.
+  It is intentionally a small standalone page (same palette and fonts as the
+  homepage, no shared layout). It must stay noindex — it is not content,
+  and robots.txt also excludes it.
+  ========================================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanks — we’ll be in touch | Uber Property Investments LLC</title>
+<meta name="description" content="Thanks for reaching out to Uber Property Investments. A team member will be in touch shortly with your cash offer.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Expanded:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --steel:#232B2E; --brick:#A63D2F; --amber:#E8A33D; --paper:#F3EEE3; --ink:#1B211F; --smoke:#6B7573; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{font-family:'Inter',sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; -webkit-font-smoothing:antialiased;}
+  main{min-height:100vh; display:flex; align-items:center; justify-content:center; padding:28px;}
+  .card{background:#fff; border:1px solid rgba(27,33,31,0.12); border-radius:4px; padding:40px 32px; max-width:520px; text-align:center; box-shadow:0 20px 40px rgba(0,0,0,0.12);}
+  h1{font-family:'Archivo Expanded',sans-serif; font-weight:900; font-size:30px; line-height:1.1; margin-bottom:14px;}
+  p{color:var(--smoke); font-size:16px; margin-bottom:16px;}
+  a{color:var(--brick); font-weight:700;}
+</style>
+</head>
+<body>
+<main>
+  <div class="card">
+    <h1>Got it — thanks.</h1>
+    <p>A local team member will reach out shortly with your cash offer.</p>
+    <p><a href="/">Back to the homepage</a></p>
+  </div>
+</main>
+</body>
+</html>

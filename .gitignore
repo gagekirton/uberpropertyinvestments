@@ -14,7 +14,12 @@ yarn-error.log*
 pnpm-debug.log*
 
 # environment variables
+# NOTE: this site needs no environment variables — the lead form uses
+# Netlify Forms, which needs no keys (see docs/lead-capture.md and
+# .env.example). Never commit a real .env file.
 .env
+.env.local
+.env.*.local
 .env.production
 
 # macOS-specific files

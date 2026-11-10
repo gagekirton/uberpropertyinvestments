@@ -1,0 +1,7 @@
+# Uber Property Investments — uberpropertyinvestments.com
+# The /thank-you page is only a form-submission landing page; keep it out of search.
+User-agent: *
+Allow: /
+Disallow: /thank-you
+
+Sitemap: https://www.uberpropertyinvestments.com/sitemap.xml
